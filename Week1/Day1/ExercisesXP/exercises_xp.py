@@ -76,7 +76,7 @@ print(f"I have a {computer_brand} computer.")
 # ------------------------------------------------------------
 
 name = "Leeroy"
-age = 25
+age = 20
 shoe_size = 43
 info = f"My name is {name}, I am {age} years old, I wear size {shoe_size} shoes and I love building apps with AI."
 print(info)
