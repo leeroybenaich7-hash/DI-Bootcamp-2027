@@ -1,0 +1,24 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.delete {
+  border: none;
+  background: none;
+  color: #c0392b;
+  cursor: pointer;
+}
+
+.done label {
+  color: red;
+  text-decoration: line-through;
+}
