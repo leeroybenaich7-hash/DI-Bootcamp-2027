@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+============================================================
+Week 3 - Day 3 - Exercises XP
+Exercise 1 : HTML Form
+============================================================
+Instructions
+Hint : Read about sending form data using the HTTP protocol
+
+Create a form like the one above. The form should contain three inputs:
+- a small text input asking for a name,
+- a larger textarea input to write a message,
+- a submit input ("Send")
+
+When you click the Send button, the form will be submitted with a GET method.
+(you can use the same HTML file for the action url)
+Where will the sent data appear?
+
+Answer: with GET, the data appears in the URL, in the query string after the "?"
+(example: form_get.html?name=Leeroy&message=Hello+world).
+============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 1 - GET form</title>
+</head>
+<body>
+  <h1>Contact form (GET)</h1>
+  <form action="form_get.html" method="GET">
+    <label for="name">Name :</label><br>
+    <input type="text" id="name" name="name" size="20"><br><br>
+
+    <label for="message">Message :</label><br>
+    <textarea id="message" name="message" rows="6" cols="40"></textarea><br><br>
+
+    <input type="submit" value="Send">
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    // Show the data that was sent in the URL (query string)
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("name")) {
+      document.getElementById("result").textContent =
+        "Data received in the URL : name = " + params.get("name") +
+        " / message = " + params.get("message");
+    }
+  </script>
+</body>
+</html>

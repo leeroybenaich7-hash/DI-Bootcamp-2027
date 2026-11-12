@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+============================================================
+Week 3 - Day 3 - Daily Challenge : HTML Form
+============================================================
+What You will learn :
+- HTTP and HTTP methods
+- Form
+- JSON
+
+Instructions
+Create a form with two fields (name, last name) and a submit button.
+When you click the Send button, retrieve the data from the inputs,
+and append it on the DOM as a JSON string.
+The output should be: {"name":"...","lastname":"..."}
+============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Challenge - HTML Form</title>
+</head>
+<body>
+  <form id="userForm">
+    <label for="name">Name :</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="lastname">Last name :</label>
+    <input type="text" id="lastname" name="lastname"><br><br>
+
+    <input type="submit" value="Send">
+  </form>
+
+  <div id="output"></div>
+
+  <script src="daily_challenge.js"></script>
+</body>
+</html>
