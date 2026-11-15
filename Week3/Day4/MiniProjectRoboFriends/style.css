@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-family: "Courier New", monospace;
+  background: linear-gradient(to left, #0ccac4, #2f7ebf);
+}
+
+h1 {
+  font-size: 48px;
+  color: #0ccac4;
+  text-shadow: 2px 2px #1b3a5c;
+  letter-spacing: 3px;
+}
+
+#searchBox {
+  padding: 10px;
+  width: 260px;
+  border: 2px solid #0ccac4;
+  background: #e6fffd;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+#robotList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 220px;
+  padding: 15px;
+  background: #9eebcf;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.card p {
+  font-size: 13px;
+  margin: 0;
+}
