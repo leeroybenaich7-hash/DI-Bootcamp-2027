@@ -1,0 +1,94 @@
+"use strict";
+// Week 4 - Day 1 - Exercises XP : Advanced TypeScript Concepts and Applications
+// 🌟 Exercise 1: Class with Access Modifiers
+// Create a class Employee with the following properties:
+// - A private property name of type string.
+// - A private property salary of type number.
+// - A public property position of type string.
+// - A protected property department of type string.
+// Also, include a constructor to initialize these properties.
+// Create a public method getEmployeeInfo that returns the employee's name and position.
+class Employee {
+    constructor(name, salary, position, department) {
+        this.name = name;
+        this.salary = salary;
+        this.position = position;
+        this.department = department;
+    }
+    getEmployeeInfo() {
+        return `Name: ${this.name}, Position: ${this.position}`;
+    }
+}
+const employee = new Employee("Leeroy", 3500, "Developer", "IT");
+console.log(employee.getEmployeeInfo());
+console.log("Public position:", employee.position);
+// employee.salary -> Error: Property 'salary' is private and only accessible within class 'Employee'.
+// 🌟 Exercise 2: Readonly Properties in a Class
+// Create a class Product with the following properties:
+// - A readonly property id of type number.
+// - A public property name of type string.
+// - A public property price of type number.
+// Create a method getProductInfo that returns a string with the product's name and price.
+// Attempt to modify the id property after creating a new instance of the class and observe the result.
+class Product {
+    constructor(id, name, price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+    getProductInfo() {
+        return `${this.name} costs $${this.price}`;
+    }
+}
+const product = new Product(1, "MacBook", 1200);
+console.log(product.getProductInfo());
+// product.id = 2;
+// -> Error: Cannot assign to 'id' because it is a read-only property.
+// TypeScript refuses to compile this line, so the id stays the same:
+console.log("Product id:", product.id);
+// 🌟 Exercise 3: Class Inheritance
+// Create a base class Animal with a public property name and a method makeSound that returns a string.
+// Create a subclass Dog that extends Animal and overrides the makeSound method
+// to return the sound a dog makes ("bark").
+// Create an instance of the Dog class and call the makeSound method.
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    makeSound() {
+        return "some sound";
+    }
+}
+class Dog extends Animal {
+    makeSound() {
+        return "bark";
+    }
+}
+const dog = new Dog("Rex");
+console.log(`${dog.name} says ${dog.makeSound()}`);
+// 🌟 Exercise 4: Static Properties and Methods
+// Create a class Calculator with the following static methods:
+// - add(a: number, b: number): number – returns the sum of two numbers.
+// - subtract(a: number, b: number): number – returns the difference between two numbers.
+// Call these methods without creating an instance of the class.
+class Calculator {
+    static add(a, b) {
+        return a + b;
+    }
+    static subtract(a, b) {
+        return a - b;
+    }
+}
+console.log("10 + 5 =", Calculator.add(10, 5));
+console.log("10 - 5 =", Calculator.subtract(10, 5));
+function printUserDetails(user) {
+    console.log(`ID: ${user.id}, Name: ${user.name}, Email: ${user.email}`);
+    if (user.membershipLevel) {
+        console.log(`Membership level: ${user.membershipLevel}`);
+    }
+    else {
+        console.log("Membership level: none");
+    }
+}
+printUserDetails({ id: 1, name: "Leeroy", email: "leeroy@example.com", membershipLevel: "Gold" });
+printUserDetails({ id: 2, name: "Sarah", email: "sarah@example.com" });
